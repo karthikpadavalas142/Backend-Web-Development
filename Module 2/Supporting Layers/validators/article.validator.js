@@ -1,0 +1,1 @@
+const{body}=require('express-validator');exports.createArticle=[body('title').trim().notEmpty().withMessage('Title is required'),body('body').notEmpty().isLength({max:2000}).withMessage('Body is required and must be under 2000 characters')];exports.updateArticle=[body('title').optional().trim().notEmpty(),body('body').optional().isLength({max:2000})];

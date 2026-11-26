@@ -1,0 +1,1 @@
+const config=require('../config');module.exports=(err,req,res,next)=>{const status=err.statusCode||500,body={error:err.isOperational?err.message:'Internal Server Error'};if(config.nodeEnv!=='production'&&err.stack)body.stack=err.stack;res.status(status).json(body);};

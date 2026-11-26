@@ -1,0 +1,1 @@
+const express=require('express'),config=require('./config'),router=require('./routes/articles'),errors=require('./middleware/errorHandler');const app=express();app.use(express.json());app.use('/articles',router);app.use(errors);if(require.main===module)app.listen(config.port,()=>console.log(`articles-api listening on http://localhost:${config.port}`));module.exports=app;
